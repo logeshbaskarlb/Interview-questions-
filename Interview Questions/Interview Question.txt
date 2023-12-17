@@ -1,0 +1,187 @@
+					HTML
+
+1)Meta Tags
+
+	Meta tags are tags whuch is in the head section pf the HTML.It is used to mention the details of the web page.
+
+2)Sematic
+
+	Sematic tags are nothing but the tags which are used for specific task like header, footer, nav, aside.
+
+3)Entities
+
+	Entities are the code for the symbols which are not in the key boards like arrow symbols and also we can write symbols like greater than ssymbol, lesser than symbol
+
+4)Void in HTMl
+
+	The tag which do not have the closing tags.
+
+5)Formatting tags in HTML
+	
+	Are i,b,strong, em, sub,sup
+
+6)Inline and block line in HTML
+
+	In line element are elemets where we use in the like specific tasks like span ,marks, b, i like that.And block line tags are like div , p , aside , article.
+______________________________________________________________________________________________________________________________________________________________________
+
+								CSS
+
+1)Box model 
+
+	Box model contains the inner most as content which cointians all tags as div span img all the stuff,next padding the space between the content and the browser and then border padding surrounded by boder which can have the width style and colr and then la last margin.
+
+2)Flex
+
+	Flex the content for responsive which contains flex-driection, srink ,wrap ,align ments 
+
+3)Pseudo-elements and class
+	
+	Pseudo class to define a specific state of the element.Pseudo element to define the style the specific.
+		They are like hover, visited, after, before .
+
+4)Form Attribute 
+	
+	Form attributes are action and target .The action is to use the for submit or rest  when we give the action.Targer is link in anchor tag to open in a new wimdow.
+
+______________________________________________________________________________________________________________________________________________________________________
+									JAVASCRIPT
+
+1)What is javascript?
+	
+	javascript -1993 - Brenden Eich -NetScape- High level language - Scripting language
+ECMASCRIPT ( European computer Manufactuers Association) - Interpreted Code -
+JS engine (V8 engine) -primitive(String,Number,bigint,Undefined,Symbol,Null)
+ - Non primitive(Arrays,Objects) - [Var , Let, const] - 
+
+
+2)Promises 
+	
+	Promises is to overcome of callback hell function.
+	Promises holds the results of the async operation.
+	It is a object.
+
+  Promise is one of this state :
+	
+	*pending
+	*fullfilled----.then()
+	*reject-----.catch()
+
+3)DOM 
+	
+	Document object model is the full form of DOM.It is used access the full HTML in javascript .It interface in all face like creating elements ,setAttributes,
+we can write the innerHTML in DOM without using HTML .
+
+	Programming languages can interact with the page.
+	
+	Access and manipulate DOM is ec.
+
+4)SetTimeout() and setTimeInterval()
+
+	SetTimeout(()=>{
+consolg.log((,5000))
+}
+)			It will excute when the time comes to 0 
+
+
+SetTimeInterval() 
+	
+			It will excute in a certain interval fo time given
+
+
+4) == and ===
+
+	== checks the only the value
+	=== checks the values and the data types.
+
+5)MRF difference 
+
+	Map --> Creates a new array from calling a function for every array element.
+
+		Map() does not execute the function for empty elements.
+
+		Map() does not change the original array.
+
+	Reduce--->The reduce() method executes a reducer function for array element.
+
+		  The reduce() method returns a single value: the function's accumulated result.
+
+		   The reduce() method does not execute the function for empty array elements.
+
+		   The reduce() method does not change the original array.
+	
+	Filter---->The filter() method creates a new array filled with elements that pass a test provided by a function.
+
+		   The filter() method does not execute the function for empty elements.
+
+		   The filter() method does not change the original array.
+
+
+
+
+6)Map and for each
+ 
+	Map returns the new array
+	
+	foreach does not returns the new array 
+
+	Both are array methods which use to iterate an array of elements.morever foreach and map method called higher order function. A higher order function takes parameter as function and returns a function. Foreach and map method slightly different both of execution.  When we use the foreach method to iterate perform some action for each element of an array. However When we use the map method to iterate an element and apply the function and return a new array.
+
+7)CallBack hell
+
+	Callback hell is a phenomenon in JavaScript where multiple callback functions are nested within each other, often resulting in code that is difficult to read, maintain, and debug. The term is often used to refer to the situation where a function is called within another function, which is then called within another function, and so on.
+	
+	So we use promsis instead of Callback hell.
+
+8)OOPS in JAVASCRIPT
+
+	*Abstraction------>Abstraction in programming is the process of hiding complexity and only showing the most important information. It's like a wrapper that shows the important functionality of a function, but hides the detailed structure. 
+Abstraction reduces complexity and increases efficiency. It allows programmers to focus on what's most important and relevant. 
+Different programming languages provide different types of abstraction, depending on the intended applications for the language. For example, in C++, abstraction is achieved through: 
+Classes
+Header files
+Access specifiers (public, private, protected)
+
+
+	*polymorpishm---->
+		Polymorphism is a programming concept that allows a single function, method, or operator to work with multiple types or objects of different classes. It's an essential feature of object-oriented programming (OOP). 
+Polymorphism increases the flexibility and reusability of code by: 
+Allowing objects of different classes to be treated as objects of a common superclass
+Providing a single interface to entities of different types
+Using a single symbol to represent multiple different types
+
+	*inheritance----->Inheritance is a programming feature that allows programmers to create new classes from existing classes. The new class is called the "derived class" or "child class" and the existing class is known as the "base class" or "parent class". 
+Inheritance allows programmers to: 
+Reuse code by referencing the behaviors and data of an object
+Specify a new implementation while maintaining the same behaviors
+Independently extend original software via public classes and interfaces
+
+
+	*Encapsulation---->Encapsulation is a way to restrict the direct access to some components of an object, so users cannot access state values for all of the variables of a particular object. Encapsulation can be used to hide both data members and data functions or methods associated with an instantiated class or object.
+	
+
+9)Explain Hoisting in javascript.
+
+		Hoisting is the default behaviour of javascript where all the variable and function declarations are moved on top.
+
+10)slice() and splice() 
+		
+	--->slice() function slice the element and but the original array not be affected.
+	
+	--->splice() function splice the element and only returns the balanced element in the array.
+
+
+11)Asych & await
+
+	
+	
+
+12)Get and SET
+
+	Get – a function without arguments, that works when a property is read,
+	Set – a function with one argument, that is called when the property is set,
+
+13)Class in JS
+
+		Classes are a template for creating objects. They encapsulate data with code to work on that data. Classes in JS are built on prototypes but also have some syntax and semantics that are unique to classes.
+

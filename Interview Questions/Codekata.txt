@@ -1,0 +1,1583 @@
+Problem 1:
+Problem Statement:
+You are provided with a number, “N”. Find its factorial.
+
+Input Description:
+A positive integer is provided as an input.
+
+Output Description:
+Print the factorial of the integer.
+
+Sample Input :
+2
+Sample Output :
+2
+Explanation:
+
+Before getting into the program we need to understand what a factorial of a number is.
+
+A factorial of a number N is calculated by multiplying all numbers from 1 to the number N i.e., Factorial of 5 is calculated by multiplying all numbers from 1 to 5 (1*2*3*4*5) .Hence factorial of 5 is (1*2*3*4*5=)120.
+
+Similarly ,Factorial of 2 is(1*2)=2
+
+Factorial of 3 is (1*2*3)=6
+
+
+Now coming into the program, we need to to do product of N numbers starting from 1.Hence ,When we need to do set of conditions repeatedly until certain condition is achieved, we need to use one of the loops(for, while and do while).In this program we will go with for loop.
+
+Step 1:Get the input from the user/console. The input from the console is of String data type we need to convert it into Number using parseInt() method.
+var n=parseInt(userInput[0]);
+Step 2:Intialize a variable fact with 1
+var fact =1;
+Step 3:Now from 1 to N ,we need to multiply all numbers and we need to store the result in fact variable by using for loop.
+for(i=1;i<=n;i++)
+    fact=fact*i ;  
+Step 4:We need to print the final result
+console.log(fact);
+Program for finding factorial of a number
+// Getting input via STDIN
+const readline = require("readline");
+const inp = readline.createInterface({
+  input: process.stdin
+});
+const userInput = [];
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+inp.on("close", () => {
+   
+    var n=parseInt(userInput[0]);
+    var fact=1;
+    for(i=1;i<=n;i++)
+        fact=fact*i;
+     console.log(fact);
+//end-here
+});
+Problem 2:
+Problem Statement:
+You are provided with a number check whether its odd or even.
+
+Print “Odd” or “Even” for the corresponding cases.
+
+Note: In case of a decimal, Round off to nearest integer and then find the output. Incase the input is zero, print “Zero”.
+
+Input Description:
+A number is provided as the input.
+
+Output Description:
+Find out whether the number is odd or even. Print “Odd” or “Even” for the corresponding cases
+
+Sample Input :
+2
+Sample Output :
+Even
+Explanation:
+Before getting into the program, We shall understand what is odd and even number. Even number when divided by 2 ,it leaves a remainder zero and Odd number leaves a remainder one.
+
+In programming languages, 4/2 gives the quotient and the answer will be 2.To get the remainder we need to use modulo operator(%) i.e., 4%2 gives you answer as 0 and 5%2 gives you answer 1.
+
+
+Since we are checking only two conditions we will go with simple if..else..conditional statements.
+
+Step 1:Get the input from the user/console. The input from the console is of String data type we need to convert it into Number using parseInt() method.
+var n=parseInt(userInput[0])
+Step 2:Check the remainder of the number N when divided by 2,by using modulo operator(%). If the remainder is zero print “Even”.
+if(n%2==0)
+    console.log("Even")
+Step 3:If the remainder is not zero, print as “Odd”
+else
+    console.log("Odd");
+Program to print odd or even
+// Getting input via STDIN
+const readline = require("readline");
+const inp = readline.createInterface({
+  input: process.stdin
+});
+const userInput = [];
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+inp.on("close", () => {
+//start-here
+  //Your code goes here … replace the below line with your code logic
+  var n=parseInt(userInput[0]);
+if(n%2==0)
+    console.log("Even");
+  else
+    console.log("Odd");
+//end-here
+});
+Problem 3:
+Problem Statement:
+You are given Two Numbers, A and B. If C = A + B. Find C.
+
+Note: Round off the output to a single decimal place.
+
+Input Description:
+You are provided with two numbers A and B.
+
+Output Description:
+Find the sum of the two numbers (A + B)
+
+Sample Input :
+1
+1
+Sample Output :
+2
+Explanation:
+You are given two numbers and we need to print the sum of two numbers
+
+Step 1:Get two numbers from user/console. Since the given input is in the form of String we need to convert them into numbers by using parseInt() function. Since we are getting input from two different lines, First input will get stored in userInput[0] and seconnd input will get stored at userInput[1].
+var n1=parseInt(userInput[0])
+var n2=parseInt(userInput[1])
+Step 2:Add two numbers n1 and n2 and store it in another variable answer
+var answer=n1+n2;
+Step 3:Print the result
+console.log(answer);
+Program to add two numbers
+// Getting input via STDIN
+const readline = require("readline");
+const inp = readline.createInterface({
+  input: process.stdin
+});
+const userInput = [];
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+inp.on("close", () => {
+  //start-here
+  //Your code goes here … replace the below line with your code logic
+var n1=parseInt(userInput[0])
+var n2=parseInt(userInput[1])
+  var answer=n1+n2;
+  console.log(answer);
+//end-here
+});
+Problem 4:
+Problem Statement:
+You are provided with the radius of a circle “A”. Find the length of its circumference.
+
+Note: In case the output is coming in decimal, roundoff to 2nd decimal place. In case the input is a negative number, print “Error”.
+
+Input Description:
+The Radius of a circle is provided as the input of the program.
+
+Output Description:
+Calculate and print the Circumference of the circle corresponding to the input radius up to two decimal places.
+
+Sample Input :
+2
+Sample Output :
+12.57
+Explanation:
+
+You are given a input radius. We need to calculate circumference. Circumference of the circle is calculated by 2*PI*r.
+
+
+Step 1:You are given radius of the circle and we need to convert the radius into decimal value(floating point number) by using parseFloat() function .Since the the output is asked in decimal(Floating point) we are converting the radius into floating point number.
+var r=parseFloat(userInput[0]);
+Step 2:Calculate the circumference of the circle by using the formula 2*Math.PI*r. The value of PI is stored in Math.PI variable.(The value of PI is just approximately 3.14 .We need to put accurate value, The accurate value of PI is stored in Math.PI variable. So don't use 2*3.14*r .It will give you just approximate results.)
+var result=2*Math.PI*r;
+Step 3:The Output must be rounded off to two decimal places. By using toFixed() function we can round the answer to two decimal places.
+result=result.toFixed(2);
+Step 4:If the result becomes negative print “Error” in the console or else print the result in the console.
+    if(result<0)
+        console.log("Error")
+    else
+        console.log(result);
+Program:
+// Getting input via STDIN
+const readline = require("readline");
+const inp = readline.createInterface({
+  input: process.stdin
+});
+const userInput = [];
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+inp.on("close", () => {
+    var r=parseFloat(userInput[0]);
+    
+    var result=2*Math.PI*r;
+    result=result.toFixed(2);
+    if(result<0)
+        console.log("Error")
+    else
+        console.log(result);
+//end-here
+});
+Program 5:
+Problem Statement:
+The area of an equilateral triangle is ¼(√3a*a) where “a” represents a side of the triangle. You are provided with the side “a”. Find the area of the equilateral triangle.
+
+Input Description:
+The side of an equilateral triangle is provided as the input.
+
+Output Description:
+Find the area of the equilateral triangle and print the answer up to 2 decimal places after rounding off.
+
+Sample Input :
+20
+Sample Output :
+173.21
+Explanation:
+You are given the side of the triangle and we need to calculate the area of the triangle by using the formula: ¼(√3*a*a).
+
+
+Step 1:You are given side of the equilateral triangle and we need to convert the side into decimal value(floating point number) by using parseFloat() function .Since the the output is asked in decimal(Floating point) we are converting the side of the triangle into floating point number.
+var a=parseFloat(userInput[0]);
+Step 2:We need to calculate the area of the triangle by using the formula (Math.sqrt(3)*a*a)/4. (The square root of 3 is just approximately 1.732.We need to put accurate value, The accurate value of Square root of 3 is calculated by Math.sqrt(3) function . So don’t use 1.732*a*a .It will give you just approximate results.)
+var b=(Math.sqrt(3)*a*a)/4;
+Step 3:We round off the result by 2 decimal places. It can be rounded off by using tofixed() function.
+b=b.toFixed(2);
+Step 4:Print the result in the console
+
+console.log(b);
+Program:
+// 
+Getting input via STDIN
+const readline = require("readline");
+const inp = readline.createInterface({
+  input: process.stdin
+});
+const userInput = [];
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+inp.on("close", () => {
+  //start-her
+var a=parseFloat(userInput[0]);
+  var b=(Math.sqrt(3)*a*a)/4;
+  b=b.toFixed(2);
+  
+  console.log(b);
+//end-here
+});
+Problem 6:
+Problem Statement:
+You are given with Principle amount($), Interest Rate(%) and Time (years) in that order. Find Simple Interest.
+
+Print the output up to two decimal places (Round-off if necessary).
+
+(S.I. = P*T*R/100)
+
+Input Description:
+Three values are given to you as the input. these values correspond to Principle amount, Interest Rate and Time in that particular order.
+
+Output Description:
+Find the Simple interest and print it up to two decimal places. Round off if required.
+
+Sample Input :
+1000 2 5
+Sample Output :
+100.00
+Explanation:
+
+You are given Principal amount, Interest percentage and time and you need to calculate the Simple interest by using the formula S.I. = P*T*R/100
+
+Step 1:You need to get input from user. The input is generally in the form of String (Statement)“100 2 5”.We need to separate them into individual characters by using split() method. Here split(“ ”) splits the string into individual characters those are separated by an empty space. The result will be stored as [“100”, “2”, “5”] i.e., as group of characters
+
+var n=userInput[0].split(" ")
+Step 2:Now “n” consists of group of characters i.e,.[“100”, “2”, “5”]. “100” is stored in “n” at 0th position , “2” is stored at 1st position and 5 is in “2” position. We can access them by the following syntax i.e., n[0] is 100 ,n[1] is 2 and so on. Now we need to convert all the characters into floating point numbers(Decimal numbers) by using parseFloat() function
+var p=parseFloat(n[0]);
+var t=parseFloat(n[1]);
+var r=parseFloat(n[2]);
+Step 3:Calculate Simple interest and store it in the variable SI
+var SI=(p*t*r)/100;
+Step 4:Since we need to round the answer to two decimal places we can use toFixed() function to round off the answer
+
+SI=SI.toFixed(2);
+Step 5:Print the result in the console.
+console.log(SI);
+Program:
+// Getting input via STDIN
+const readline = require("readline");
+const inp = readline.createInterface({
+  input: process.stdin
+});
+const userInput = [];
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+inp.on("close", () => {
+  //start-here
+  //Your code goes here … replace the below line with your code logic
+var n=userInput[0].split(" ")
+  var p=parseFloat(n[0]);
+  var t=parseFloat(n[1]);
+  var r=parseFloat(n[2]);
+  var SI=(p*t*r)/100;
+  SI=SI.toFixed(2);
+  console.log(SI);
+//end-here
+});
+Problem 7:
+Problem Statement:
+You are given with a number “N”, find its cube.
+
+Input Description:
+A positive integer is provided.
+
+Output Description:
+Find the cube of the number.
+
+Sample Input :
+2
+Sample Output :
+8
+Explanation:
+
+You are given a number and we need to find the cube of that number. Cube of a number is calculated by multiplying the same number three times i.e., Cube of 2 is calculated by (2*2*2) =8.
+
+Step 1:Get the input from user/console and convert them into number by using parseInt() function, because the input is always in string format.
+var a=parseInt(userInput[0]);
+Step 2:Multiply the number three times and store the result in variable “c”.
+var c=a*a*a;
+Step 3:Print the result in the console.
+console.log(c)
+Program:
+// Getting input via STDIN
+const readline = require("readline");
+const inp = readline.createInterface({
+  input: process.stdin
+});
+const userInput = [];
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+inp.on("close", () => {
+ var a=parseInt(userInput[0]);
+  var c=a*a*a;
+  console.log(c)
+//end-here
+});
+Program 8:
+Problem Statement:
+You are given with a number A i.e. the temperature in Celcius. Write a program to convert this into Fahrenheit.
+
+Note: In case of decimal values, round-off to two decimal places.
+
+Input Description:
+A number is provided in Celsius as the input of the program.
+
+Output Description:
+The output shall be the temperature converted into Fahrenheit corresponding to the input value print up to two decimal places and round off if required.
+
+Sample Input :
+12
+Sample Output :
+53.60
+Explanation:
+
+You are given the temperature in Celsius you need to convert it into Fahrenheit. The formula to find a Fahrenheit temperature from Celsius is: °F = (°C × 9/5) + 32.
+
+Step 1:Get the input from user/console .Since the input is always is in String(Statement) format we need to convert them into number by using parseInt() or parseFloat() function. As the output is given in decimal we can use parseFloat() function to convert the input to Decimal number(Floating point number)
+let a = parseFloat(userInput[0]);
+Step 2:Convert Celsius to Fahrenheit by using the formula °F = (°C × 9/5) + 32 and store the result in another variable “b”
+let b = a*(9/5) + 32 ;
+Step 3:Since we need to round the answer to two decimal places we can use toFixed() function to round off the answer
+b=b.toFixed(2)
+Step 4:Print the result in the console.
+console.log(b);
+Program:
+const readline = require("readline");
+const inp = readline.createInterface({
+  input: process.stdin
+});
+const userInput = [];
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+inp.on("close", () => {
+var a = parseFloat(userInput[0]);
+var b = a*(9/5) + 32 ;
+b=b.toFixed(2)
+ console.log(b);
+//end-here
+});
+Problem 9:
+Problem Statement:
+You will be provided with a number. Print the number of days in the month corresponding to that number.
+
+Note: In case the input is February, print 28 days. If the Input is not in valid range print “Error”.
+
+Input Description:
+The input is in the form of a number.
+
+Output Description:
+Find the days in the month corresponding to the input number. Print Error if the input is not in a valid range.
+
+Sample Input :
+8
+Sample Output :
+31
+Explanation:
+
+We need to print the number of days given in the month number.Have a look on the month number and days given below
+
+
+Step 1:Get the input from user/console .Since the input is always is in String(Statement) format we need to convert them into number by using parseInt() function.
+var N=parseInt(userInput[0])
+Step 2:If N is one of these value 1, 3, 5, 7, 8, 10, 12, then print “31 ”. Generally if statement is used to check only one condition. If we need to check multiple conditions we need to use ||(OR) operator and &&(AND) operator. With in those multiple conditions OR operator return true when any one of the condition matches and AND operator returns true when only all the condition matches. Here when N matches with any one of the values i.e.,[1,3,5,7,8,10,12] then if statement executes.
+
+if(N == 1||N == 3 || N == 5|| N == 7 || N == 8 || N == 10|| N == 12) {
+ console.log("31");
+}
+Step 3:If N is one of these value 4, 6, 9, 11, then print “30 ”.
+else if (N == 4 || N == 6|| N == 9 || N == 11) {
+        console.log("30");
+    }
+Step 4:If N is 2 Print “28”
+else if (N == 2) {
+        console.log("28");
+    }
+Step 5:or else print “Error” in the console.
+else {
+        console.log("Error");
+    }
+Program:
+// Getting input via STDIN
+const readline = require("readline");
+const inp = readline.createInterface({
+  input: process.stdin
+});
+const userInput = [];
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+inp.on("close", () => {
+  //start-here
+  //Your code goes here … replace the below line with your code logic
+var N=parseInt(userInput[0])
+  
+  if (N == 1 || N == 3 || N == 5
+        || N == 7 || N == 8 || N == 10
+        || N == 12) {
+        console.log("31");
+    }
+  
+    // Check for 30 Days
+    else if (N == 4 || N == 6
+             || N == 9 || N == 11) {
+        console.log("30");
+    }
+  
+    // Check for 28/29 Days
+    else if (N == 2) {
+        console.log("28");
+    }
+  
+    // Else Invalid Input
+    else {
+        console.log("Error");
+    }
+//end-here
+});
+Problem 10:
+Problem Statement:
+Print the First 3 multiples of the given number “N”. (N is a positive integer)
+
+Note: print the characters with a single space between them.
+
+Input Description:
+A positive integer is provided to you as an input.
+
+Output Description:
+Print the First 3 multiples of the number with single spaces between them as an output.
+
+Sample Input :
+2
+Sample Output :
+2 4 6
+Explanation:
+
+You are given a number and you need to print three multiples of a number. For example if you are given a number 2,First three multiples are 2,4 and 6.It is obtained by (2*1),(2*2) and (2*3).
+
+Step 1:Get the input from user/console .Since the input is always is in String(Statement) format we need to convert them into number by using parseInt() function.
+var a=parseInt(userInput[0]);
+Step 2:Store three multiples in three different variables
+var n1=a*1;
+var n2=a*2;
+var n3=a*3;
+Step 3:Print the multiples in the console separated by space
+
+console.log(n1+" "+n2+" "+n3)
+Program:
+// Getting input via STDIN
+const readline = require("readline");
+const inp = readline.createInterface({
+  input: process.stdin
+});
+const userInput = [];
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+inp.on("close", () => {
+  //start-here
+  //Your code goes here … replace the below line with your code logic 
+    var a=parseInt(userInput[0]);
+    var n1=a*1;
+    var n2=a*2;
+    var n3=a*3;
+    
+    console.log(n1+" "+n2+" "+n3)
+//end-here
+});
+Problem 11:
+Problem Statement:
+You are given the coefficients of a quadratic equation in order A, B & C.
+
+Where A is the coefficient of X2, B is the coefficient of X and C is the constant term in the most simplified form.
+
+Example: For X2 + 5X + 6 = 0, you are given the input as: 1 5 6.
+
+Write a program to find all of the roots of the quadratic.
+
+Note: The output should be up to 2nd decimal place (round off if needed) and in case of a recurring decimal use braces i.e. for eg: 0.33333….. => 0.33.
+
+Note: Use Shri Dharacharya’s Method to solve i.e. X = {-b + √(b² — 4ac) } / 2a & {-b-√(b² -4ac)} / 2a
+
+Input Description:
+Three numbers corresponding to the coefficients of x(squared), x and constant are given as an input in that particular order
+
+Output Description:
+Print the two values of X after rounding off to 2 decimal places if required.
+
+Sample Input :
+1 5 6
+Sample Output :
+-2.00
+-3.00
+Explanation:
+
+You are given three numbers and you need to calculate two roots by using two formula
+
+First root formula:X = {-b + √(b² — 4ac) } / 2a
+
+Second root formula:Y={-b -√(b² — 4ac) } / 2a
+
+Step 1:You need to get input from user. The input is generally in the form of String (Statement)“1 5 6”.We need to separate them into individual characters by using split() method. Here split(“ ”) splits the string into individual characters those are separated by an empty space. The result will be stored as [“1”, “5”, “6”] i.e., as group of characters
+
+var n=userInput[0].split(" ");
+Step 2:Now “n” consists of group of characters i.e,.[“1”, “5”, “6”]. “1” is stored in “n” at 0th position , “5” is stored at 1st position and 6 is in “2” position. We can access them by the following syntax i.e., n[0] is 1,n[1] is 6and so on. Now we need to convert all the characters into floating point numbers(Decimal numbers) by using parseFloat() function
+
+var a=parseFloat( n[0]) ; 
+var b=parseFloat( n[1] ); 
+var c=parseFloat( n[2] );
+Step 3:calculate two roots by using the above formula and store them in two separate variables.Math.sqrt() is a function to calculate square root of a number
+
+var e=(-b + Math.sqrt(b*b-4*a*c) )/(2*a);
+var h=(-b - Math.sqrt(b*b-4*a*c) )/(2*a);
+Step 4:Since the two roots must be rounded off to two decimal places ,use to fixed() function to round off to two decimal places.
+
+e = e.toFixed(2);
+h= h.toFixed(2);
+Step 5:Print the two roots in the console.
+
+console.log(e);
+console.log(h);
+Program:
+const readline = require('readline');
+const inp = readline.createInterface({
+  input: process.stdin
+});
+const userInput = [];
+inp.on("line", (data) => {
+ userInput.push(data);
+});
+inp.on("close", () => {
+var n=userInput[0].split(" ");
+var a=parseFloat( n[0]) ; 
+var b=parseFloat( n[1] ); 
+var c=parseFloat( n[2] );
+var e=(-b + Math.sqrt(b*b-4*a*c) )/(2*a);
+  var h=(-b - Math.sqrt(b*b-4*a*c) )/(2*a);
+  e = e.toFixed(2);
+  h= h.toFixed(2);
+  console.log(e);
+  console.log(h);
+});
+Problem 12:
+Problem Statement:
+You are given A = Length of a rectangle & B = breadth of a rectangle. Find its area “C”.
+
+(A and B are natural numbers)
+
+Input Description:
+The inputs are two natural numbers representing the length and the breadth of a rectangle.
+
+Output Description:
+Find the area of the rectangle formed by the provided input. Round off the answer to the first decimal place if required.
+
+Sample Input :
+2
+3
+Sample Output :
+6
+Explanation:
+
+You are given length and breadth of the rectangle, you need to calculate the area of the rectangle. The formula for calculating area of the rectangle is length*breadth.
+
+Step 1:Get two numbers from user/console .Since the input is always is String (Statement)format ,convert them into decimal numbers by using parseFloat() function. Since we are getting input from two different lines, First input will get stored in userInput[0] and second input will get stored at userInput[1].
+var l=parseFloat(userInput[0]);
+var b=parseFloat(userInput[1]);
+Step 2:Calculate the area and store it in another variable
+var area=l*b;
+Step 3:Since the answer must be rounded off to two decimal places ,use to fixed() function to round off to two decimal places.
+area=area.toFixed(2);
+Step 4:Print the result in the console.
+console.log(area)
+Program:
+// Getting input via STDIN
+const readline = require("readline");
+const inp = readline.createInterface({
+  input: process.stdin
+});
+const userInput = [];
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+inp.on("close", () => {
+  //start-here
+  //Your code goes here … replace the below line with your code logic
+var l=parseFloat(userInput[0]);
+  var b=parseFloat(userInput[1]);
+  
+  var area=l*b;
+  area=area.toFixed(2);
+  console.log(area)
+//end-here
+});
+Problem 13:
+Problem Statement:
+Let “A” be a year, write a program to check whether this year is a leap year or not.
+
+Print “Y” if its a leap year and “N” if its a common year.
+
+Input Description:
+A Year is the input in the form of a positive integer.
+
+Output Description:
+Print “Y” if its a leap year and “N” if its a common year.
+
+Sample Input :
+2020
+Sample Output :
+Y
+Explanation:
+
+You are given a year and you need to check whether the given year is leap year or not. A year is a leap year if the following conditions are satisfied:
+
+The year is a multiple of 400.
+The year is a multiple of 4 and not a multiple of 100.
+Step 1:Get two numbers from user/console .Since the input is always is String (Statement)format ,convert them into Number by using parseInt() function.
+var year=parseInt(userInput[0])
+Step 2:Check for leap year, based on the above condition using simple if..else statement.
+if ((year % 4==0) && (year % 100!=0) || (year % 400==0)) {
+        console.log("Y");
+    } 
+else {
+        console.log("N");
+    }
+Program
+// Getting input via STDIN
+const readline = require("readline");
+const inp = readline.createInterface({
+  input: process.stdin
+});
+const userInput = [];
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+inp.on("close", () => {
+  //start-here
+  //Your code goes here … replace the below line with your code logic
+var year=parseInt(userInput[0])
+if ((year % 4==0) && (year % 100!=0) || (year % 400==0)) {
+        console.log("Y");
+    } 
+else {
+        console.log("N");
+    }
+});
+Problem 14:
+Problem Statement:
+Using the method of looping, write a program to print the table of 9 till N in the format as follows:
+(N is input by the user)
+
+9 18 27…
+
+Print NULL if 0 is input
+
+Input Description:
+A positive integer is provided as an input.
+
+Output Description:
+Print the table of nine with single space between the elements till the number that is input.
+
+Sample Input :
+3
+Sample Output :
+9 18 27
+Explanation:
+
+Given a number N,we need to print the N multiples of 9.i.e., if the number given is 3 we need to print first three multiples of 9 (9,18,27),if the number given is 4 we need to print first four multiples of 9(9,18,27,36)and so on..
+
+Step 1:Get two numbers from user/console .Since the input is always is String (Statement)format ,convert them into Number by using parseInt() function.
+var n=parseInt(userInput[0]);
+Step 2:We need to print group of numbers(Multiples of 9).To store a group of numbers we need to use Array. Hence we need to declare an empty array.
+var arr=[];
+Step 3:We need to store multiples of 9 in the array by using for loop. We are using push() method to insert elements inside the array.
+for(i=1;i<=n;i++)
+    arr.push(9*i);
+Step 4:Now we need to print the array in String format. Initially the numbers will be in the form[9,18,27].We need to print them as “9 18 27”. So we need to use join() method. We are joining the elements of the array by space so we use join(“ ”).
+console.log(arr.join(" "));
+Program:
+
+// Getting input via STDIN
+const readline = require("readline");
+const inp = readline.createInterface({
+  input: process.stdin
+});
+const userInput = [];
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+inp.on("close", () => {
+  //start-here
+  //Your code goes here … replace the below line with your code logic
+var n=parseInt(userInput[0]);
+var arr=[];
+  
+ for(i=1;i<=n;i++)
+    arr.push(9*i);
+    
+ console.log(arr.join(" "));
+//end-here
+});
+Problem 15:
+
+Problem Statement:
+
+You are provided with a number “N”, Find the Nth term of the series: 1, 4, 9, 16, 25, 36, 49, 64, 81, …….
+
+(Print “Error” if N = negative value and 0 if N = 0).
+
+Input Description:
+An integer N is provided to you as the input.
+
+Output Description:
+Find the Nth term in the provided series.
+
+Sample Input :
+18
+Sample Output :
+324
+Explanation:
+
+You are given a number, You need print the square of the number i.e.,If you are given a number 18 you need to print 18*18=324.
+
+Step 1:Get two numbers from user/console .Since the input is always is String (Statement)format ,convert them into Number by using parseInt() function.
+let n=parseInt(userInput[0])
+Step 2:If the given number is negative Print “Error”in the console,or else print the square of the number(n*n)by using if..else Statement.
+if(n<0)
+    console.log("Error")
+else
+    console.log(n*n)
+Program:
+// Getting input via STDIN
+const readline = require("readline");
+const inp = readline.createInterface({
+  input: process.stdin
+});
+const userInput = [];
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+inp.on("close", () => {
+  //start-here
+  //Your code goes here … replace the below line with your code logic
+let n=parseInt(userInput[0])
+  if(n<0)
+    console.log("Error")
+else
+    console.log(n*n)
+  //end-here
+});
+Problem 16:
+Problem Statement:
+You are provided with two numbers. Find and print the smaller number.
+
+Input Description:
+You are provided with two numbers as input.
+
+Output Description:
+Print the small number out of the two numbers.
+
+Sample Input :
+23 1
+Sample Output :
+1
+Explanation:
+
+You are given two numbers and you need to print the smallest of two numbers by using if..else condition.
+
+Step 1:You need to get input from user. The input is generally in the form of String (Statement)“23 6”.We need to separate them into individual characters by using split() method. Here split(“ ”) splits the string into individual characters those are separated by an empty space. The result will be stored as [“23”, “6”] i.e., as group of characters.
+var n=userInput[0].split(" ");
+Step 2:Now “n” consists of group of characters i.e,.[“23”,“6”]. “23” is stored in “n” at 0th position and “6” is stored at 1st position . We can access them by the following syntax i.e., n[0] is 23,n[1] is 6and so on. Now we need to convert all the String characters into Number by using parseInt() function.
+var a=parseInt(n[0]);
+var b=parseInt(n[1]);
+Step 3:Print the smallest number by using if..else condition
+if(a>b){
+      console.log(b);
+  }
+  
+  else
+    console.log(a)
+Program:
+// Getting input via STDIN
+const readline = require("readline");
+const inp = readline.createInterface({
+  input: process.stdin
+});
+const userInput = [];
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+inp.on("close", () => {
+var n=userInput[0].split(" ");
+  var a=parseInt(n[0]);
+  var b=parseInt(n[1]);
+  
+  if(a>b){
+      console.log(b);
+  }
+  
+  else
+    console.log(a)
+  //end-here
+});
+Problem 17:
+Problem Statement
+Write a code to get an integer N and print the values from N to 1.
+
+Input Description:
+A single line contains an integer N.
+
+Output Description:
+Print the values from N to 1 in a separate line.
+
+Sample Input :
+10
+Sample Output :
+10
+9
+8
+7
+6
+5
+4
+3
+2
+1
+Explanation:
+
+You are given a number and you need to print values from N to 1in reverse order. Since we are doing the steps repeatedly until certain condition is achieved ,we need to use for loop.
+
+Step 1:Get the number from user/console .Since the input is always is String (Statement)format ,convert them into Number by using parseInt() function.
+var a=parseInt(userInput[0])
+Step 2:Print the numbers one by one using for loop from N to 1.
+for(i=a;i>0;i--)
+    console.log(i);
+Program:
+// Getting input via STDIN
+const readline = require("readline");
+const inp = readline.createInterface({
+  input: process.stdin
+});
+const userInput = [];
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+inp.on("close", () => {
+  //start-here
+  //Your code goes here … replace the below line with your code logic
+var a=parseInt(userInput[0])
+  
+  for(i=a;i>0;i--)
+    console.log(i);
+//end-here
+});
+Problem 18:
+Problem Statement:
+You are given a number A in Kilometers. Convert this into B: Meters and C: Centi-Metres.
+
+Input Description:
+A number “A” representing some distance in kilometer is provided to you as the input.
+
+Output Description:
+Convert and print this value in meters and centimeters.
+
+Sample Input :
+2
+Sample Output :
+2000
+200000
+Explanation:
+
+
+Step 1:Get the number from user/console .Since the input is always is String (Statement)format ,convert them into Number by using parseInt() function.
+var n=parseInt(userInput[0]);
+Step 2:Convert N km to meter by multiplying n by 1000 and to centimeter by multiplying by 10000 and print the result.
+console.log(n*1000)
+console.log(n*100000)
+Program:
+// Getting input via STDIN
+const readline = require("readline");
+const inp = readline.createInterface({
+  input: process.stdin
+});
+const userInput = [];
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+inp.on("close", () => {
+  //start-here
+  //Your code goes here … replace the below line with your code logic
+var n=parseInt(userInput[0]);
+  console.log(n*1000)
+  console.log(n*100000)
+//end-here
+});
+Problem 19:
+Problem Statement:
+Write a code to get an integer N and print the digits of the integer.
+
+Input Description:
+A single line contains an integer N.
+
+Output Description:
+Print the digits of the integer in a single line separated by space,
+
+Sample Input :
+348
+Sample Output :
+3 4 8
+Explanation:``
+
+You are given a number and you need to separate the number and print them.
+
+Step 1:You need to get input from user. The input is generally in the form of String (Statement)“348”.We need to separate them into individual characters by using split() method. Here split(“”) splits the string into individual characters those are separated by an empty space. The result will be stored as [“3”, “4”, “8”] i.e., as group of characters
+var n=userInput[0].split("");
+Step 2:Now we need to join the separated characters .Initially the characters will be in the form[3,4,8].We need to print them as “3 4 8”. So we need to use join() method. We are joining the elements of the array by space so we use join(“ ”).
+
+`console.log(n.join(" "))
+Program:
+// Getting input via STDIN
+const readline = require("readline");
+const inp = readline.createInterface({
+  input: process.stdin
+});
+const userInput = [];
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+inp.on("close", () => {
+  //start-here
+  //Your code goes here … replace the below line with your code logic
+var n=userInput[0].split("");
+  console.log(n.join(" "))
+//end-here
+});
+Problem 20:
+Problem Statement:
+Write a code to get an integer N and print the even values from 1 till N in a separate line.
+
+Input Description:
+A single line contains an integer N.
+
+Output Description:
+Print the even values from 1 to N in a separate line.
+
+Sample Input :
+6
+Sample Output :
+2
+4
+6
+Explanation:
+
+You are given a number and you need to print all even numbers starting from 2 till the number “N”.i.e., if your given 8 the output should be 2,4,6,8.
+
+Step 1:Get the number from user/console .Since the input is always is String (Statement)format ,convert them into Number by using parseInt() function.
+var n=parseInt(userInput[0]);
+Step 2:Intialize i with 2,since the even numbers starts with the number 2 and increment i by 2 in each step inside the for loop(i.e., i=i+2).Run the for loop till i≤n.
+`for(i=2;i<=n;i=i+2){
+      console.log(i);
+  }
+Program:
+// Getting input via STDIN
+const readline = require("readline");
+const inp = readline.createInterface({
+  input: process.stdin
+});
+const userInput = [];
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+inp.on("close", () => {
+  //start-here
+  //Your code goes here … replace the below line with your code logic
+var n=parseInt(userInput[0]);
+  
+  for(i=2;i<=n;i=i+2){
+      console.log(i);
+  }
+//end-here
+});
+Problem 21:
+Problem Statement:
+Write a code get an integer number as input and print the sum of the digits.
+
+Input Description:
+A single line containing an integer.
+
+Output Description:
+Print the sum of the digits of the integer.
+
+Sample Input :
+124
+Sample Output :
+7
+Explanation:
+
+You are given a number and you need to print the sum of the digits given in the number i.e., if N=124 the output should be 1+2+4=7.
+
+Step 1:You need to get input from user. The input is generally in the form of String (Statement)“124”.We need to separate them into individual characters by using split() method. Here split(“”) splits the string into individual characters. The result will be stored as [“1”, “2”, “4”] i.e., as group of characters.
+var a=userInput[0].split("");
+Step 2:Intialize a variable sum with zero.
+var sum=0;
+Step 3:Now we need to add the elements in the “a” array i.e.,sum of [“1”, “2”, “4”].But the characters are in the form of String We need to convert them into Number by using parseInt() function inside the for loop and add with the sum variable.
+for(i=0;i<a.length;i++)
+    sum=sum+parseInt(a[i]);
+Step 4:Print the sum in the console.
+console.log(sum);
+Program:
+// Getting input via STDIN
+const readline = require("readline");
+const inp = readline.createInterface({
+  input: process.stdin
+});
+const userInput = [];
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+inp.on("close", () => {
+  //start-here
+  //Your code goes here … replace the below line with your code logic
+var a=userInput[0].split("");
+  var sum=0;
+  for(i=0;i<a.length;i++)
+    sum=sum+parseInt(a[i]);
+    
+    console.log(sum)
+//end-here
+});
+Problem 22:
+Problem Statement:
+Write a program to get a string as input and reverse the string without using temporary variable.
+
+Input Description:
+A single line containing a string.
+
+Output Description:
+Print the reversed string.
+
+Sample Input :
+GUVI
+Sample Output :
+IVUG
+Explanation:
+
+You are given a String and you need to print the input string in reverse form.
+
+Step 1:You need to get input from user. The input is generally in the form of String (Statement)“GUVI”. We need to separate them into individual characters by using split() method. Here split(“”) splits the string into individual characters. The result will be stored as [“G”, “U”, “V”, “I”] i.e., as group of characters.
+var a=userInput[0].split("")
+Step 2:Now we need to reverse all those characters by using reverse() method. After reversing the characters are stored as [“I”, “V”, “U”, “G”]
+a=a.reverse();
+Step 3:Now we need to join the separated characters into string by using join() method.
+console.log(a.join(""))
+Program:
+
+// Getting input via STDIN
+const readline = require("readline");
+const inp = readline.createInterface({
+  input: process.stdin
+});
+const userInput = [];
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+inp.on("close", () => {
+  //start-here
+  //Your code goes here … replace the below line with your code logic
+var a=userInput[0].split("")
+  a=a.reverse();
+  console.log(a.join(""))
+//end-here
+});
+Problem :23
+Problem Statement:
+Write a code to get an integer N and print values from 1 till N in a separate line.
+
+Input Description:
+A single line contains an integer N.
+
+Output Description:
+Print the values from 1 to N in a separate line.
+
+Sample Input :
+5
+Sample Output :
+1
+2
+3
+4
+5
+Explanation:
+
+You are given a number and you need to print all the numbers from 1 till the given number one by one.
+
+Step 1:Get the number from user/console .Since the input is always is String (Statement)format ,convert them into Number by using parseInt() function.
+var n=parseInt(userInput[0]);
+Step 2:Since we need to set of iterations until a certain condition is achieved we will use for loops here. Initialize i with 1 inside the for loop and iterate till “n”.
+for(i=1;i<=n;i++)
+    console.log(i)
+Program:
+// Getting input via STDIN
+const readline = require("readline");
+const inp = readline.createInterface({
+  input: process.stdin
+});
+const userInput = [];
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+inp.on("close", () => {
+  //start-here
+  //Your code goes here … replace the below line with your code logic
+var n=parseInt(userInput[0]);
+  for(i=1;i<=n;i++)
+    console.log(i)
+//end-here
+});
+Problem 24:
+Problem Statement:
+Write a code to get 2 integers as input and find the HCF of the 2 integer without using recursion or Euclidean algorithm.
+
+Input Description:
+A single line containing 2 integers separated by space.
+
+Output Description:
+Print the HCF of the integers.
+
+Sample Input :
+2 3
+Sample Output :
+1
+Explanation:
+
+You are given two numbers and you need to calculate the Highest Common Factor(HCF) of two numbers. Let us see how to calculate HCF of two numbers.
+
+
+HCF of two numbers
+Step 1:You need to get input from user. The input is generally in the form of String (Statement)“23 6”.We need to separate them into individual characters by using split() method. Here split(“ ”) splits the string into individual characters those are separated by an empty space. The result will be stored as [“23”, “6”] i.e., as group of characters.
+var n=userInput[0].split(" ");
+Step 2:Now “n” consists of group of characters i.e,.[“23”,“6”]. “23” is stored in “n” at 0th position and “6” is stored at 1st position . We can access them by the following syntax i.e., n[0] is 23,n[1] is 6and so on. Now we need to convert all the String characters into Number by using parseInt() function.
+var n1=parseInt(n[0]);
+var n2=parseInt(n[1]);
+Step 3:Declare two empty arrays and calculate factors of two numbers and push them into respective arrays.
+var arr1=[]; 
+    var arr2=[];
+    
+    for(i=1;i<=n1;i++){
+        if(n1%i==0)
+            arr1.push(i)
+    }
+   
+    for(i=1;i<=n2;i++){
+        if(n2%i==0)
+            arr2.push(i)
+    }
+  
+Step 4:Now check what are the factors common in both the arrays and update with the highest common factor available in both the arrays.
+for(i=0;i<arr1.length&&i<arr2.length;i++){
+        if(arr2.includes(arr1[i]))
+            factor=arr1[i];
+    }
+    
+    console.log(factor)
+Program:
+// Getting input via STDIN
+const readline = require("readline");
+const inp = readline.createInterface({
+  input: process.stdin
+});
+const userInput = [];
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+inp.on("close", () => {
+var n=userInput[0].split(" ");
+    var n1=parseInt(n[0]);
+    var n2=parseInt(n[1]);
+    var arr1=[]; 
+    var arr2=[];
+    
+    for(i=1;i<=n1;i++){
+        if(n1%i==0)
+            arr1.push(i)
+    }
+    
+    for(i=1;i<=n2;i++){
+        if(n2%i==0)
+            arr2.push(i)
+    }
+   
+    var factor=0
+    for(i=0;i<arr1.length&&i<arr2.length;i++){
+        if(arr2.includes(arr1[i]))
+            factor=arr1[i];
+    }
+    
+    console.log(factor)
+//end-here
+});
+Problem 25:
+Problem Statement:
+Write a code to get 2 integers A and N. Print the integer A, N times in separate line.
+
+Input Description:
+First line contains an integer A. Second line contains an Integer N.
+
+Output Description:
+Print the integer A, N times in a separate line.
+
+Sample Input :
+2 3
+Sample Output :
+2
+2
+2
+Explanation:
+
+You are given a number A and we are supposed to print that number N times which is also obtained from the input console.i.e., If you are given 2 5 as input then your output should be
+
+Output :
+//( 2 should be printed 5 times)
+2
+2
+2
+2
+2
+Step 1:You need to get input from user. The input is generally in the form of String (Statement)“2 6”.We need to separate them into individual characters by using split() method. Here split(“ ”) splits the string into individual characters those are separated by an empty space. The result will be stored as [“2”, “6”] i.e., as group of characters.
+var t=userInput[0].split(" ")
+Step 2:Now “t” consists of group of characters i.e,.[“2”,“6”]. “2” is stored in “t” at 0th position and “6” is stored at 1st position . We can access them by the following syntax i.e., t[0] is 2,t[1] is 6and so on. Now we need to convert all the String characters into Number by using parseInt() function.
+var a=parseInt(t[0])
+var n=parseInt(t[1])
+Step 3:Now we need to print the number A , N times by using the for loop.Intialize i with 1 and run until i≤n inside the for loop.And in each iteration we need to print the number A.
+for(i=1;i<=n;i++)
+    console.log(a)
+Program:
+
+// Getting input via STDIN
+const readline = require("readline");
+const inp = readline.createInterface({
+  input: process.stdin
+});
+const userInput = [];
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+inp.on("close", () => {
+  //start-here
+  //Your code goes here … replace the below line with your code logic
+var t=userInput[0].split(" ")
+  var a=parseInt(t[0])
+  var n=parseInt(t[1])
+  
+  for(i=1;i<=n;i++)
+    console.log(a)
+//end-here
+});
+Problem 26:
+Problem Statement:
+Write a code get an integer number as input and print the odd and even digits of the number separately.
+
+Input Description:
+A single line containing an integer.
+
+Output Description:
+Print the even and odd integers of the integer in a separate line.
+
+Sample Input :
+1234
+Sample Output :
+2 4
+1 3
+Explanation:
+
+Step 1: You need to get input from user. The input is generally in the form of String (Statement)“1234”.We need to separate them into individual characters by using split() method. Here split(“”) splits the string into individual characters. The result will be stored as [“1”, “2”, “3”, “4”] i.e., as group of characters.
+var a=userInput[0].split("");
+Step 2:Now create two empty arrays odd[] and even [].Whenever we need to store group of characters we need to use Arrays. Iterate over the input characters and check whether it is odd or even .Whether it is odd push it into odd array and whether it is even push it into even array. In the array each character is present in the form of String we need to convert it into Number by using parseInt() function.
+
+var even=[];
+  var odd=[];
+  for(i=0;i<a.length;i++){
+      if(parseInt(a[i])%2==0)
+        even.push(a[i]);
+    else
+    odd.push(a[i]); 
+  }
+Step 3:Now we need to sort both odd and even arrays. Sorting is used to order the elements of the array in ascending order.
+even.sort();
+odd.sort();
+Step 4:Join the elements of both the array by using join() method and print the array.
+console.log(even.join(" "));
+  console.log(odd.join(" "));
+Program:
+
+// Getting input via STDIN
+const readline = require("readline");
+const inp = readline.createInterface({
+  input: process.stdin
+});
+const userInput = [];
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+inp.on("close", () => {
+  //start-here
+  //Your code goes here … replace the below line with your code logic 
+  var a=userInput[0].split("");
+  var even=[];
+  var odd=[];
+  for(i=0;i<a.length;i++){
+      if(parseInt(a[i])%2==0)
+        even.push(a[i]);
+    else
+    odd.push(a[i]);
+    
+  }
+  
+  even.sort();
+  odd.sort();
+  console.log(even.join(" "));
+  console.log(odd.join(" "));
+//end-here
+});
+Problem 27:
+Problem Statement:
+Write a code to get the input and print it 5 times.
+
+Input Description:
+A single line contains an integer N.
+
+Output Description:
+Output contains 5 lines with each line having the value N.
+
+Sample Input :
+4
+Sample Output :
+4
+4
+4
+4
+4
+Explanation:
+
+You are given a number “a”. You need to print that number 5 times.
+
+Step 1:Get the number from user/console .Since the input is always is String (Statement)format ,convert them into Number by using parseInt() function.
+var a=parseInt(userInput[0])
+Step 2:We need to print the given number five times using for loop. Intialize i with 1 and run the loop until i reaches 5.In each iteration print the given number.
+for(i=1;i<=5;i++)
+    console.log(a);
+Program:
+
+// Getting input via STDIN
+const readline = require("readline");
+const inp = readline.createInterface({
+  input: process.stdin
+});
+const userInput = [];
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+inp.on("close", () => {
+  //start-here
+  //Your code goes here … replace the below line with your code logic
+var a=parseInt(userInput[0])
+  for(i=1;i<=5;i++)
+    console.log(a);
+//end-here
+});
+Problem 28:
+Problem Statement:
+Write a code to get an integer N and print the sum of values from 1 to N.
+
+Input Description:
+A single line contains an integer N.
+
+Output Description:
+Print the sum of values from 1 to N.
+
+Sample Input :
+10
+Sample Output :
+55
+Explanation:
+
+You are given a number and you need to sum all the elements from 1 till that number .If you are given the number 5,You need to sum all the numbers from 1 to 5.Then the output would be 1+2+3+4+5=15
+
+Step 1:Get the number from user/console .Since the input is always is String (Statement)format ,convert them into Number by using parseInt() function.
+var s=Number(userInput[0]);
+Step 2:Intialize a new variable sum to zero.
+var sum=0;
+Step 3:Now we need to add all numbers from 1 to the given number. Since we need to do same addition operation until a certain condition is achieved we need to use loops. Initialize i with 1 and run the for loop till the given number. In each iteration add the values to the sum to get the result.
+for(i=1;i<=s;i++){
+ 
+    sum=sum+i;
+    
+  }
+Step 4:Print the result.
+console.log(sum);
+Program:
+
+// Getting input via STDIN
+const readline = require("readline");
+const inp = readline.createInterface({
+  input: process.stdin
+});
+const userInput = [];
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+inp.on("close", () => {
+  //start-here
+  //Your code goes here … replace the below line with your code logic
+var s=Number(userInput[0]);
+  var sum=0;
+  
+  for(i=1;i<=s;i++){
+ 
+    sum=sum+i;
+    
+  }
+  console.log(sum);
+//end-here
+});
+Problem 29:
+
+Problem Statement:
+
+Let “A” be a string. Remove all the whitespaces and find it’s length.
+
+Input Description:
+A string is provide as an input
+
+Output Description:
+Remove all the whitespaces and then print the length of the remaining string.
+
+Sample Input :
+Lorem Ipsum
+Sample Output :
+10
+Explanation:
+
+You are given a string and you need to remove all the white spaces and you need to check the length of the string after removing the white spaces. Length of the string is defined as the number of characters present in it.
+
+Step 1:Get the input string from the user
+var s=userInput[0];
+Step 2:Intialize a new variable count with zero.
+var count=0;
+Step 3:Now check every character inside the string ,if it is not a white space just increment the count.
+for(i=0;i<s.length;i++){
+      if(s[i]!=" ")
+        count++;
+  }
+Step 4:Print the result:
+console.log(count);
+Program:
+
+// Getting input via STDIN
+const readline = require("readline");
+const inp = readline.createInterface({
+  input: process.stdin
+});
+const userInput = [];
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+inp.on("close", () => {
+  //start-here
+  //Your code goes here … replace the below line with your code logic
+var s=userInput[0];
+  var count=0;
+  for(i=0;i<s.length;i++){
+      if(s[i]!=" ")
+        count++;
+  }
+    console.log(count)
+  //end-here
+});
+Problem 30:
+Problem Statement:
+You are given three numbers A, B & C. Print the largest amongst these three numbers.
+
+Input Description:
+Three numbers are provided to you.
+
+Output Description:
+Find and print the largest among the three
+
+Sample Input :
+1
+2
+3
+Sample Output :
+3
+Explanation:
+
+You are given three numbers and you need to print largest among the three numbers.
+
+Step 1:Get three inputs from the user.Since three inputs are given from three different lines we need to get them by userInput[0], userInput[1] and userInput[2].While getting the input we need to convert them into Number as they are initially String data type by using parseInt() method.
+var a=parseInt(userInput[0]);
+var b=parseInt(userInput[1]);
+var c=parseInt(userInput[2]);
+Step 2:We need to find maximum of three numbers by using Math.max() function.
+var answer=Math.max(a,b,c);
+Step 3:Print the result in the console.
+console.log(answer)
+Program:
+// Getting input via STDIN
+const readline = require("readline");
+const inp = readline.createInterface({
+  input: process.stdin
+});
+const userInput = [];
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+inp.on("close", () => {
+  //start-here
+  //Your code goes here … replace the below line with your code logic
+var a=parseInt(userInput[0]);
+  var b=parseInt(userInput[1]);
+  var c=parseInt(userInput[2]);
+  
+  var answer=Math.max(a,b,c);
+    
+console.log(answer)
+//end-here
+});
